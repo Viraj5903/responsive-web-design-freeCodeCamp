@@ -1,0 +1,129 @@
+/* 
+Global styling for the HTML and * elements to ensure all elements inherit box-sizing 
+for better handling of width, height, and padding/margin.
+*/
+html {
+    box-sizing: border-box;
+    /* Set box-sizing to border-box to include padding and borders in width/height */
+}
+
+/* Inherit box-sizing property from html to all elements and pseudo-elements */
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* 
+Styling for the main piano container. It is the background area that holds the piano keys.
+*/
+#piano {
+    background-color: #00471b;
+    /* Dark green background to represent the piano's body */
+    width: 992px;
+    /* Set the width of the piano */
+    height: 290px;
+    /* Set the height of the piano */
+    margin: 80px auto;
+    /* Center the piano in the viewport with 80px margin on top */
+    padding: 90px 20px 0 20px;
+    /* Add padding inside the piano, 90px top padding */
+    position: relative;
+    /* Used for absolute positioning of inner elements */
+    border-radius: 10px;
+    /* Rounded corners of the piano body */
+}
+
+/* Styling for the keys section inside the piano */
+.keys {
+    background-color: #040404;
+    /* Dark background color for the piano keys */
+    width: 949px;
+    /* Set the width of the key area */
+    height: 180px;
+    /* Set the height of the key area */
+    padding-left: 2px;
+    /* Add padding on the left side */
+    overflow: hidden;
+    /* Prevent the keys from overflowing out of the piano */
+}
+
+/* 
+Styling for the white piano keys.
+Each white key is a rectangular block with a specific size and rounded bottom corners.
+*/
+.key {
+    background-color: #ffffff;
+    /* White background for the key */
+    position: relative;
+    /* Used to position the black keys relative to white keys */
+    width: 41px;
+    /* Set the width of each white key */
+    height: 175px;
+    /* Set the height of each white key */
+    margin: 2px;
+    /* Small space between keys */
+    float: left;
+    /* Position the keys horizontally in a row */
+    border-radius: 0 0 3px 3px;
+    /* Rounded bottom corners for each white key */
+}
+
+/* Styling for the black keys, which are positioned above the white keys */
+.key.black--key::after {
+    background-color: #1d1e22;
+    /* Black color for the black keys */
+    content: "";
+    /* Empty content for the pseudo-element used for black keys */
+    position: absolute;
+    /* Position the black key absolutely */
+    left: -18px;
+    /* Offset black key slightly to the left to sit in between white keys */
+    width: 32px;
+    /* Set the width of the black key */
+    height: 100px;
+    /* Set the height of the black key */
+    border-radius: 0 0 3px 3px;
+    /* Rounded bottom corners for each black key */
+}
+
+/* Styling for the logo of FreeCodeCamp */
+.logo {
+    width: 200px;
+    /* Set the width of the logo */
+    position: absolute;
+    /* Position the logo absolutely within the piano */
+    top: 23px;
+    /* Place the logo 23px from the top of the piano */
+}
+
+/* Media query for responsive design when the screen width is 768px or less (mobile view) */
+@media (max-width: 768px) {
+    #piano {
+        width: 358px;
+        /* Adjust piano width for smaller screens */
+    }
+
+    .keys {
+        width: 318px;
+        /* Adjust keys width for smaller screens */
+    }
+
+    .logo {
+        width: 150px;
+        /* Adjust logo size for smaller screens */
+    }
+}
+
+/* Media query for responsive design when the screen width is between 769px and 1199px (tablet view) */
+@media (max-width: 1199px) and (min-width: 769px) {
+    #piano {
+        width: 675px;
+        /* Adjust piano width for medium-sized screens */
+    }
+
+    .keys {
+        width: 633px;
+        /* Adjust keys width for medium-sized screens */
+    }
+}

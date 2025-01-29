@@ -1,0 +1,275 @@
+/* Apply box-sizing globally to all elements to make width and height calculations easier */
+* {
+    box-sizing: border-box;
+}
+
+/* Set background color for the body */
+body {
+    background-color: #c9d2fc;
+}
+
+/* Main container that holds the cat's head */
+.cat-head {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: linear-gradient(#5e5e5e 85%, #45454f 100%);
+    /* Gradient for the cat's head */
+    width: 205px;
+    height: 180px;
+    border: 1px solid #000;
+    border-radius: 46%;
+    /* Rounded edges to create a cat-head shape */
+}
+
+/* Left cat ear */
+.cat-left-ear {
+    position: absolute;
+    top: -26px;
+    left: -31px;
+    z-index: 1;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 10px;
+    transform: rotate(-45deg);
+    /* Rotate to give ear the proper angle */
+    /* Making triangle shape for the ear: Border left and right combined make width of the triangle and border bottom makes height */
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 70px solid #5e5e5e;
+}
+
+/* Right cat ear */
+.cat-right-ear {
+    position: absolute;
+    top: -26px;
+    left: 163px;
+    z-index: 1;
+    transform: rotate(45deg);
+    border-top-left-radius: 90px;
+    border-top-right-radius: 10px;
+    /* Making triangle shape for the ear: Border left and right combined make width of the triangle and border bottom makes height */
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 70px solid #5e5e5e;
+}
+
+/* Inner part of the left ear */
+.cat-left-inner-ear {
+    position: absolute;
+    top: 22px;
+    left: -20px;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 40%;
+    border-bottom-left-radius: 40%;
+    /* Making triangle shape for the ear: Border left and right combined make width of the triangle and border bottom makes height */
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #3b3b4f;
+    /* Darker color for inner ear */
+}
+
+/* Inner part of the right ear */
+.cat-right-inner-ear {
+    position: absolute;
+    top: 22px;
+    left: -20px;
+    border-top-left-radius: 90px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 40%;
+    border-bottom-left-radius: 40%;
+    /* Making triangle shape for the ear: Border left and right combined make width of the triangle and border bottom makes height */
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #3b3b4f;
+}
+
+/* Left cat eye */
+.cat-left-eye {
+    position: absolute;
+    top: 54px;
+    left: 39px;
+    border-radius: 60%;
+    transform: rotate(25deg);
+    width: 30px;
+    height: 40px;
+    background-color: #000;
+    /* Black eye */
+}
+
+/* Right cat eye */
+.cat-right-eye {
+    position: absolute;
+    top: 54px;
+    left: 134px;
+    border-radius: 60%;
+    transform: rotate(-25deg);
+    width: 30px;
+    height: 40px;
+    background-color: #000;
+    /* Black eye */
+}
+
+/* Inner part of the left eye */
+.cat-left-inner-eye {
+    position: absolute;
+    top: 8px;
+    left: 2px;
+    width: 10px;
+    height: 20px;
+    transform: rotate(10deg);
+    background-color: #fff;
+    /* White for the inner part */
+    border-radius: 60%;
+}
+
+/* Inner part of the right eye */
+.cat-right-inner-eye {
+    position: absolute;
+    top: 8px;
+    left: 18px;
+    transform: rotate(-5deg);
+    width: 10px;
+    height: 20px;
+    background-color: #fff;
+    /* White for the inner part */
+    border-radius: 60%;
+}
+
+/* Cat's nose */
+.cat-nose {
+    position: absolute;
+    top: 108px;
+    left: 85px;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    transform: rotate(180deg);
+    /* Rotating to get the correct nose shape */
+    /* Making triangle shape for the ear: Border left and right combined make width of the triangle and border bottom makes height */
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid #442c2c;
+    /* Brownish color for the nose */
+}
+
+/* Container for the cat's mouth */
+.cat-mouth div {
+    width: 30px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 190%/190px 150px 0 0;
+    /* Rounded corners creating the cat's mouth shape */
+    /* Explanation of the border-radius property:
+       - border-radius: 190%/190px 150px 0 0;
+       - This property defines the roundness of the corners and helps shape the mouth.
+       - The value is given in two parts: the first value (`190%/190px`) affects the vertical rounding (top-left and top-right corners), and the second value (`150px 0`) affects the horizontal rounding (bottom-left and bottom-right corners).
+       
+       - The first value (`190%/190px`) is applied to the vertical (top) and horizontal (left and right) corners, making the top corners more rounded and giving the mouth a wider shape.
+       - The second value (`150px 0`) gives the bottom corners more subtle rounding. The `150px` creates a slight curve at the bottom-left, and the `0` means the bottom-right corner is sharp, forming the open end of the mouth.
+       
+       Overall, the `border-radius` shapes the top of the mouth into a rounded arch and the bottom into a relatively flat shape, which mimics the appearance of a cat's mouth.
+    */
+
+    border-color: black transparent transparent transparent;
+    /* Detailed explanation of the border property:
+       - border: 2px solid #000;
+       - The border is 2px thick and solid black (#000).
+       - The border-color is split into four parts (top, right, bottom, left) using the shorthand format.
+       - The border-color is set as follows:
+         - Top: black (#000) to create the outline of the top lip of the cat's mouth.
+         - Right: transparent to hide the right side of the border.
+         - Bottom: transparent to hide the bottom side of the border.
+         - Left: transparent to hide the left side of the border.
+         
+       This combination creates a shape where only the top outline is visible, and the sides and bottom are hidden.
+    */
+}
+
+
+/* Left side of the cat's mouth */
+.cat-mouth-line-left {
+    position: absolute;
+    top: 88px;
+    left: 74px;
+    transform: rotate(170deg);
+    /* Slight rotation to match the mouth shape */
+}
+
+/* Right side of the cat's mouth */
+.cat-mouth-line-right {
+    position: absolute;
+    top: 88px;
+    left: 91px;
+    transform: rotate(165deg);
+    /* Slight rotation to match the mouth shape */
+}
+
+/* Left whiskers container */
+.cat-whiskers-left div {
+    width: 40px;
+    height: 1px;
+    background-color: #000;
+    /* Black whiskers */
+}
+
+/* Right whiskers container */
+.cat-whiskers-right div {
+    width: 40px;
+    height: 1px;
+    background-color: #000;
+    /* Black whiskers */
+}
+
+/* Top left whisker */
+.cat-whisker-left-top {
+    position: absolute;
+    top: 120px;
+    left: 52px;
+    transform: rotate(10deg);
+    /* Angle for proper placement */
+}
+
+/* Middle left whisker */
+.cat-whisker-left-middle {
+    position: absolute;
+    top: 127px;
+    left: 52px;
+    transform: rotate(3deg);
+}
+
+/* Bottom left whisker */
+.cat-whisker-left-bottom {
+    position: absolute;
+    top: 134px;
+    left: 52px;
+    transform: rotate(-3deg);
+}
+
+/* Top right whisker */
+.cat-whisker-right-top {
+    position: absolute;
+    top: 120px;
+    left: 109px;
+    transform: rotate(-10deg);
+    /* Angle for proper placement */
+}
+
+/* Middle right whisker */
+.cat-whisker-right-middle {
+    position: absolute;
+    top: 127px;
+    left: 109px;
+    transform: rotate(-3deg);
+}
+
+/* Bottom right whisker */
+.cat-whisker-right-bottom {
+    position: absolute;
+    top: 134px;
+    left: 109px;
+    transform: rotate(3deg);
+}
